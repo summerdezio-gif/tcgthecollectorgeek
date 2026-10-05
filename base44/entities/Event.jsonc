@@ -1,0 +1,56 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "titre": {
+      "type": "string",
+      "title": "Titre"
+    },
+    "type": {
+      "type": "string",
+      "title": "Type d'\u00e9v\u00e9nement",
+      "enum": [
+        "Bourse d'\u00e9changes",
+        "Tournoi",
+        "Sortie de booster",
+        "Atelier",
+        "Rencontre"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "title": "Date",
+      "format": "date"
+    },
+    "horaires": {
+      "type": "string",
+      "title": "Horaires"
+    },
+    "lieu": {
+      "type": "string",
+      "title": "Lieu"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "inscrits": {
+      "type": "array",
+      "title": "Inscrits (user ids)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capacite": {
+      "type": "number",
+      "title": "Capacit\u00e9 max",
+      "default": 0
+    }
+  },
+  "required": [
+    "titre",
+    "type",
+    "date",
+    "lieu"
+  ]
+}

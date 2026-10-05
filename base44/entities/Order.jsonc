@@ -1,0 +1,57 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "title": "Cartes command\u00e9es",
+      "items": {
+        "type": "object",
+        "properties": {
+          "card_id": {
+            "type": "string"
+          },
+          "nom": {
+            "type": "string"
+          },
+          "numero": {
+            "type": "string"
+          },
+          "serie": {
+            "type": "string"
+          },
+          "prix": {
+            "type": "number"
+          },
+          "quantite": {
+            "type": "number"
+          },
+          "image": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "number",
+      "title": "Total (\u20ac)"
+    },
+    "statut": {
+      "type": "string",
+      "title": "Statut",
+      "enum": [
+        "En attente",
+        "Confirm\u00e9e",
+        "Exp\u00e9di\u00e9e",
+        "Livr\u00e9e",
+        "Annul\u00e9e"
+      ],
+      "default": "En attente"
+    }
+  },
+  "required": [
+    "items",
+    "total",
+    "statut"
+  ]
+}

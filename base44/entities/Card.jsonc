@@ -1,0 +1,112 @@
+{
+  "name": "Card",
+  "type": "object",
+  "properties": {
+    "nom": {
+      "type": "string",
+      "title": "Nom de la carte"
+    },
+    "numero": {
+      "type": "string",
+      "title": "Num\u00e9ro"
+    },
+    "serie": {
+      "type": "string",
+      "title": "S\u00e9rie"
+    },
+    "annee": {
+      "type": "number",
+      "title": "Ann\u00e9e"
+    },
+    "rarete": {
+      "type": "string",
+      "title": "Raret\u00e9",
+      "enum": [
+        "Commune",
+        "Peu commune",
+        "Rare",
+        "Holo Rare",
+        "Ultra Rare",
+        "Secret Rare",
+        "Promo",
+        "Trainer Promo"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "title": "Type / \u00c9nergie",
+      "enum": [
+        "Plante",
+        "Feu",
+        "Eau",
+        "\u00c9lectrik",
+        "Psy",
+        "Combat",
+        "Obscurit\u00e9",
+        "M\u00e9tal",
+        "F\u00e9e",
+        "Incolore",
+        "Dragon",
+        "Dresseur",
+        "\u00c9nergie"
+      ]
+    },
+    "etat": {
+      "type": "string",
+      "title": "\u00c9tat",
+      "enum": [
+        "Mint",
+        "Near Mint",
+        "Excellent",
+        "Bon",
+        "Jou\u00e9"
+      ]
+    },
+    "langue": {
+      "type": "string",
+      "title": "Langue",
+      "enum": [
+        "FR",
+        "EN",
+        "JP"
+      ]
+    },
+    "gradee": {
+      "type": "boolean",
+      "title": "Carte grad\u00e9e",
+      "default": false
+    },
+    "note_psa": {
+      "type": "number",
+      "title": "Note PSA"
+    },
+    "prix": {
+      "type": "number",
+      "title": "Prix (\u20ac)"
+    },
+    "stock": {
+      "type": "number",
+      "title": "Stock",
+      "default": 0
+    },
+    "image": {
+      "type": "string",
+      "title": "Image (URL)",
+      "format": "url"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    }
+  },
+  "required": [
+    "nom",
+    "serie",
+    "annee",
+    "rarete",
+    "etat",
+    "langue",
+    "prix",
+    "stock"
+  ]
+}

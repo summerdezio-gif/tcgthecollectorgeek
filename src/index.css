@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 19% 5%;
+    --foreground: 40 100% 95%;
+    --card: 240 19% 8%;
+    --card-foreground: 40 100% 95%;
+    --popover: 240 19% 8%;
+    --popover-foreground: 40 100% 95%;
+    --primary: 294 100% 28%;
+    --primary-foreground: 40 100% 95%;
+    --secondary: 273 49% 76%;
+    --secondary-foreground: 240 19% 5%;
+    --muted: 240 14% 14%;
+    --muted-foreground: 40 30% 75%;
+    --accent: 304 100% 46%;
+    --accent-foreground: 40 100% 95%;
+    --gold: 49 100% 50%;
+    --gold-foreground: 240 19% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 100% 95%;
+    --border: 240 14% 16%;
+    --input: 240 14% 16%;
+    --ring: 49 100% 50%;
+    --radius: 0.75rem;
+    --font-heading: "Titan One", "Lilita One", system-ui, sans-serif;
+    --font-impact: "Anton", "Impact", system-ui, sans-serif;
+    --font-body: "Fredoka", "Lilita One", system-ui, sans-serif;
+    --font-display: "Titan One", system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(129, 0, 143, 0.25), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(233, 0, 216, 0.18), transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Halftone dot texture overlay */
+  .halftone {
+    background-image: radial-gradient(rgba(233, 0, 216, 0.35) 1.5px, transparent 1.6px);
+    background-size: 14px 14px;
+  }
+  .halftone-gold {
+    background-image: radial-gradient(rgba(255, 208, 0, 0.4) 1.5px, transparent 1.6px);
+    background-size: 14px 14px;
+  }
+  .halftone-light {
+    background-image: radial-gradient(rgba(255, 247, 232, 0.18) 1.2px, transparent 1.3px);
+    background-size: 10px 10px;
+  }
+
+  /* Heavy black comic stroke */
+  .stroke-comic {
+    border: 4px solid #0B0B10;
+    box-shadow: 6px 6px 0 0 #0B0B10;
+  }
+  .stroke-comic-sm {
+    border: 3px solid #0B0B10;
+    box-shadow: 4px 4px 0 0 #0B0B10;
+  }
+
+  /* Sticker rotation utilities */
+  .sticker-tilt-l { transform: rotate(-3deg); }
+  .sticker-tilt-r { transform: rotate(3deg); }
+
+  /* Yellow CTA button */
+  .btn-gold {
+    @apply bg-gold text-black font-impact uppercase tracking-wide;
+    border: 3px solid #0B0B10;
+    box-shadow: 5px 5px 0 0 #81008F;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .btn-gold:hover {
+    transform: translate(-2px, -2px) rotate(-1deg);
+    box-shadow: 7px 7px 0 0 #81008F;
+  }
+  .btn-gold:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 0 #81008F;
+  }
+
+  .btn-violet {
+    @apply bg-primary text-white font-impact uppercase tracking-wide;
+    border: 3px solid #0B0B10;
+    box-shadow: 5px 5px 0 0 #FFD000;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .btn-violet:hover {
+    transform: translate(-2px, -2deg) rotate(-1deg);
+    box-shadow: 7px 7px 0 0 #FFD000;
+  }
+
+  /* Torn edge divider */
+  .torn-edge-top {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30' preserveAspectRatio='none'><path d='M0,30 L0,8 L60,14 L120,4 L180,16 L240,6 L300,18 L360,8 L420,14 L480,4 L540,16 L600,8 L660,18 L720,6 L780,14 L840,4 L900,16 L960,8 L1020,18 L1080,6 L1140,14 L1200,8 L1200,30 Z' fill='black'/></svg>");
+    mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 30' preserveAspectRatio='none'><path d='M0,30 L0,8 L60,14 L120,4 L180,16 L240,6 L300,18 L360,8 L420,14 L480,4 L540,16 L600,8 L660,18 L720,6 L780,14 L840,4 L900,16 L960,8 L1020,18 L1080,6 L1140,14 L1200,8 L1200,30 Z' fill='black'/></svg>");
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+}
+
+@layer utilities {
+  .text-stroke-black {
+    -webkit-text-stroke: 3px #0B0B10;
+    paint-order: stroke fill;
+  }
+  .text-stroke-black-sm {
+    -webkit-text-stroke: 2px #0B0B10;
+    paint-order: stroke fill;
+  }
+  .text-shadow-violet {
+    text-shadow: 6px 6px 0 0 rgba(129, 0, 143, 0.9);
+  }
+  .text-shadow-black {
+    text-shadow: 5px 5px 0 0 #0B0B10;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .inp {
+    @apply w-full px-3 py-2 border-2 border-black bg-white text-black font-body text-sm focus:outline-none focus:ring-2 focus:ring-gold;
+  }
+}

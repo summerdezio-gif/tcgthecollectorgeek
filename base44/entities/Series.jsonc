@@ -1,0 +1,23 @@
+{
+  "name": "Series",
+  "type": "object",
+  "properties": {
+    "nom": {
+      "type": "string",
+      "title": "Nom de la s\u00e9rie"
+    },
+    "annee": {
+      "type": "number",
+      "title": "Ann\u00e9e"
+    },
+    "logo": {
+      "type": "string",
+      "title": "Logo (URL)",
+      "format": "url"
+    }
+  },
+  "required": [
+    "nom",
+    "annee"
+  ]
+}

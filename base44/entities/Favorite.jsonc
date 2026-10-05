@@ -1,0 +1,13 @@
+{
+  "name": "Favorite",
+  "type": "object",
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "title": "ID carte"
+    }
+  },
+  "required": [
+    "card_id"
+  ]
+}
